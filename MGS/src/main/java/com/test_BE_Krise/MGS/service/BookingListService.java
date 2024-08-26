@@ -42,16 +42,16 @@ public class BookingListService {
 
         if (startTime.getHour() < 11) {
             consumptions.add(findConsumptionByName("Snack Siang", allConsumptions));
-            if (endTime.getHour() >= 11 && endTime.getHour() < 14) {
+            if (endTime.getHour() > 11 && endTime.getHour() <= 14) {
                 consumptions.add(findConsumptionByName("Makan Siang", allConsumptions));
             }
-            if (endTime.getHour() >= 14) {
+            if (endTime.getHour() > 14) {
                 consumptions.add(findConsumptionByName("Makan Siang", allConsumptions));
                 consumptions.add(findConsumptionByName("Snack Sore", allConsumptions));
             }
         } else if (startTime.getHour() >= 11 && startTime.getHour() < 14) {
             consumptions.add(findConsumptionByName("Makan Siang", allConsumptions));
-            if (endTime.getHour() >= 14) {
+            if (endTime.getHour() > 14) {
                 consumptions.add(findConsumptionByName("Snack Sore", allConsumptions));
             }
         } else if (startTime.getHour() >= 14) {
